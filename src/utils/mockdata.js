@@ -10,7 +10,7 @@ const Restro_list=[
         "cuisines": [
           "Indian"
           ],
-          "avgRating": 4.4,
+          "avgRating": 3.9,
           "parentId": "100796",
           "avgRatingString": "4.4",
           "totalRatingsString": "1K+",
