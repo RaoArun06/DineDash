@@ -9,11 +9,7 @@ const Header= ()=>{
                 <img className="logo h-16 pr-4" src={DineDash}/>
                 <h1>DineDash</h1>
             </div>
-            <div className="Nav_item flex">
-                <Nav_item/>
-                <Nav_item/>
-                <Nav_item/>
-                <Nav_item/>
+            <div className="Nav_item">
                 <Nav_item/>
             </div>
         </div>
