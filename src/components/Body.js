@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import Restro_Card from "./Restro_Card";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body= ()=>{
   const [Restro_data, setRestro_data]=useState([]);
@@ -32,7 +33,7 @@ const Body= ()=>{
             
             <div className="Restro_Card flex flex-wrap">
                 {FilterRestro_data.map((Restro) => (
-                  <Restro_Card key={Restro.info.id} Restro_info={Restro}/>
+                  <Link to={"/RestaurantMenu/"+Restro.info.id} key={Restro.info.id}><Restro_Card  Restro_info={Restro}/></Link>
                 ))}
             </div>
             
