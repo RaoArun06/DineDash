@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import RESTRO_IMG_URL from "../utils/constants";
+import {RESTRO_IMG_URL} from "../utils/constants";
 const Restro_Card= ({Restro_info})=>{
     if (!Restro_info) {
         return <div>Loading...</div>; // Or handle the undefined case appropriately

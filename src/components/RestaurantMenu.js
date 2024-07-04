@@ -1,21 +1,11 @@
 import React, { useState } from 'react'
 import { useEffect , useState} from 'react'
 import { useParams } from 'react-router-dom'
+import { RESTRO_MENU_URL } from '../utils/constants'
+import useRestaurantMenu from '../utils/useRestaurantMenu'
 const RestaurantMenu = () => {
-    useEffect(() => {
-      fetchMenu();
-    }, [])
-    const {resId}=useParams();
-    const [Menu , setMenu]=useState(null);
-    const fetchMenu = async () => {
-        const data = await fetch(
-            "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5204303&lng=73.8567437&restaurantId="+resId
-        );
-        const json= await data.json();
-        
-        const menu = json.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR.cards[2]?.card?.card?.itemCards;
-        setMenu(menu);
-    }
+  const {resId}=useParams();
+  const Menu= useRestaurantMenu(resId);
   if(Menu == null){
       return <h1>Loading....</h1>
   }

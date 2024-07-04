@@ -3,7 +3,8 @@ import ReactDOM from "react-dom";
 import Restro_Card from "./Restro_Card";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-
+import { RESTRO_IMG_URL } from "../utils/constants";
+import { RESTRO_LIST } from "../utils/constants";
 const Body= ()=>{
   const [Restro_data, setRestro_data]=useState([]);
   const [FilterRestro_data, setFilterRestro_data]=useState([]);
@@ -12,7 +13,7 @@ const Body= ()=>{
     fetchdata();
   },[]);
   const fetchdata= async ()=>{
-    const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+    const data=await fetch(RESTRO_LIST);
     const json =await data.json();
     setRestro_data(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setFilterRestro_data(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
