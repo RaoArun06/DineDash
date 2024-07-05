@@ -7,7 +7,6 @@ const Nav_item= ()=>{
     return(
         <div className="flex gap-9">
             {(onlineStatus===true)?<h1>Online 🟢</h1>:<h1>Offline 🔴</h1>}
-            <Link to="/">Home</Link>
             <Link to="/contact">Contact Us</Link>
             <Link to="/about">About Us</Link>
         </div>
