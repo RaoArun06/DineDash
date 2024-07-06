@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import Restro_Card from "./Restro_Card";
+import Restro_Card, {Special_offer} from "./Restro_Card";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { RESTRO_IMG_URL } from "../utils/constants";
@@ -9,6 +9,7 @@ const Body= ()=>{
   const [Restro_data, setRestro_data]=useState([]);
   const [FilterRestro_data, setFilterRestro_data]=useState([]);
   const [Search_data, setSearch_data]=useState("");
+  const Restro_Card_offer = Special_offer(Restro_Card);
   useEffect(()=>{
     fetchdata();
   },[]);
@@ -34,7 +35,7 @@ const Body= ()=>{
             
             <div className="Restro_Card flex flex-wrap">
                 {FilterRestro_data.map((Restro) => (
-                  <Link to={"/RestaurantMenu/"+Restro.info.id} key={Restro.info.id}><Restro_Card  Restro_info={Restro}/></Link>
+                  <Link to={"/RestaurantMenu/"+Restro.info.id} key={Restro.info.id}>{Restro.info.aggregatedDiscountInfoV3===undefined?<Restro_Card  Restro_info={Restro}/>:<Restro_Card_offer  Restro_info={Restro}/>}</Link>
                 ))}
             </div>
             
