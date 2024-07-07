@@ -37,7 +37,7 @@ const Body= ()=>{
                 {FilterRestro_data.map((Restro) => (
                   <Link to={"/RestaurantMenu/"+Restro.info.id} key={Restro.info.id}>{Restro.info.aggregatedDiscountInfoV3===undefined?<Restro_Card  Restro_info={Restro}/>:<Restro_Card_offer  Restro_info={Restro}/>}</Link>
                 ))}
-            </div>
+            </div>  
             
       </div>
     )
