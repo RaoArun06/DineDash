@@ -8,6 +8,7 @@ import RestaurantMenu from "./components/RestaurantMenu.js";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore.js";
 import Cart from "./components/Cart.js";
+import Contact from "./components/Contact.js";
 const App = ()=>{
     return (
         <Provider store={appStore}>
@@ -32,7 +33,7 @@ const rout = createBrowserRouter([
             }
             ,{
                 path: "/contact",
-                Component: () => <h1>Contact Us</h1>
+                element:<Contact/>
             },{
                 path: "/cart",
                 element:<Cart/>
