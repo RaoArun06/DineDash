@@ -5,13 +5,16 @@ import Footer from "./components/Footer.js";
 import Body from "./components/Body.js";
 import { createBrowserRouter, RouterProvider , Outlet } from "react-router-dom";
 import RestaurantMenu from "./components/RestaurantMenu.js";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore.js";
+import Cart from "./components/Cart.js";
 const App = ()=>{
     return (
-        <>
+        <Provider store={appStore}>
         <Header/>
         <Outlet/>
         <Footer/>
-        </>
+        </Provider>
     )
 }
 const rout = createBrowserRouter([
@@ -30,6 +33,9 @@ const rout = createBrowserRouter([
             ,{
                 path: "/contact",
                 Component: () => <h1>Contact Us</h1>
+            },{
+                path: "/cart",
+                element:<Cart/>
             },{
                 path: "/RestaurantMenu/:resId",
                 element: <RestaurantMenu/>
