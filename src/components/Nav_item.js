@@ -10,7 +10,6 @@ const Nav_item= ()=>{
         <div className="flex gap-9">
             {(onlineStatus===true)?<h1>Online 🟢</h1>:<h1>Offline 🔴</h1>}
             <Link to="/contact">Contact Us</Link>
-            <Link to="/about">About Us</Link>
             <Link to="/cart">Cart - {cartItems.length} items</Link>
         </div>
     )

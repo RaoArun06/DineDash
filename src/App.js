@@ -18,7 +18,7 @@ const App = ()=>{
         </Provider>
     )
 }
-const rout = createBrowserRouter([
+const route = createBrowserRouter([
     {
         path: "/",
         element: <App/>,
@@ -26,10 +26,6 @@ const rout = createBrowserRouter([
             {
                 path: "/",
                 element: <Body/>
-            }
-            ,{
-                path: "/about",
-                Component: () => <h1>About Us</h1>
             }
             ,{
                 path: "/contact",
@@ -45,4 +41,4 @@ const rout = createBrowserRouter([
     }
 ])
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={rout}/>);
+root.render(<RouterProvider router={route}/>);
